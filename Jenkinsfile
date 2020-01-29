@@ -28,16 +28,16 @@ pipeline
 		{
 			steps
 			{
-				sh 'mvn --version'
-				sh 'mvn install'
+				bat 'mvn --version'
+				bat 'mvn install'
 			}
 		}
 		stage ('Unit Testing')
 		{
 			steps
 			{
-				sh 'mvn --version'
-				sh 'mvn test'
+				bat 'mvn --version'
+				bat 'mvn test'
 			}
 		}
 		stage ('Sonar Analysis')
@@ -45,8 +45,8 @@ pipeline
 			steps
 			{
 		    	withSonarQubeEnv('Test_Sonar') {
-    				sh 'mvn --version'
-    				sh 'mvn sonar:sonar'
+    				bat 'mvn --version'
+    				bat 'mvn sonar:sonar'
 				}
 			}
 		}

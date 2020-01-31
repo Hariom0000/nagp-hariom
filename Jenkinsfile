@@ -1,10 +1,7 @@
 pipeline
 {
    agent any
-   tools
-   {
-      maven 'Maven'
-   }
+   def mvnHome=tool name: 'Maven', type: 'maven'
    options
    {
       timeout(time: 1, unit: 'HOURS')
@@ -24,8 +21,8 @@ pipeline
 		{
 		    steps
 		    {
-		        bat 'mvn --version'
-			bat 'mvn install'
+			bat "${mvnHome}/bin/mvn --version"
+			bat "${mvnHome}/bin/mvn --install"
 		    }
 		}
 		stage ('Unit Testing')

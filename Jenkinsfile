@@ -24,8 +24,8 @@ pipeline
 		{
 		    steps
 		    {
-			bat "${mvnHome}/bin/mvn --version"
-			bat "${mvnHome}/bin/mvn --install"
+			bat 'mvn --version'
+			bat 'mvn --install'
 		    }
 		}
 		stage ('Unit Testing')

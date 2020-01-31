@@ -1,7 +1,10 @@
 pipeline
 {
    agent any
-   def mvnHome=tool name: 'Maven', type: 'maven'
+   tools
+	{
+		maven 'Maven'
+	}
    options
    {
       timeout(time: 1, unit: 'HOURS')

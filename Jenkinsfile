@@ -71,7 +71,7 @@ pipeline
 		{
 		    steps
 		    {
-			bat returnStdout: true, script: 'docker build -t D:/Projects/Hello-World-JAVA-master/devopssampleapplication_hariom:${BUILD_NUMBER} -f Dockerfile .'
+			bat returnStdout: true, script: 'docker build -t devopssampleapplication_hariom:${BUILD_NUMBER} -f Dockerfile .'
 		     }
 		}
 		stage ('Push to DTR')
